@@ -1,11 +1,9 @@
-<html>
-<body>
+{% extends "base.html" %}
 
-BicoBlog
+{% block title %}{{ entry.title }} - {{ block.super }}{% endblock %}
 
-<h1>{{ entry.title }}</h1>
+{% block h1 %}{{ entry.title }}{% endblock %}
 
+{% block content%}
 {{ entry.content }}
-
-</body>
-</html>
+{% endblock %}

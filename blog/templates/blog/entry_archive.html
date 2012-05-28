@@ -1,16 +1,15 @@
-<html>
-<head>
-<link rel="alternate" type="application/rss+xml" title="Last Entries of BicoBlog" href="/latest/feed/" />
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>My Blog</h1>
-
+{% block content %}
+<img src="{{ MEDIA_URL }}foto.jpg"/>
 {% for item in latest_entry_list %}
-<h2>{{ item.title }}</h2>
+	<div class="entry">
+		<a href="{% url blog.views.entry entry_id=item.id %}"><h2>{{ item.title }}</h2></a>
 
-{{ item.content }}
+		<div class="content">
+			Entry Date {{ item.pub_date }} <br/>
+			{{ item.content }}
+		</div>
+	</div>
 {% endfor %}
-
-</body>
-</html>
+{% endblock %}
