@@ -13,4 +13,5 @@ def index(request):
 	return HttpResponse(t.render(c))
 
 def entry(request, entry_id):
-    return render_to_response('blog/entry.html')
+	entry = Entry.objects.get(id=entry_id)
+	return render_to_response('blog/entry.html', locals())
