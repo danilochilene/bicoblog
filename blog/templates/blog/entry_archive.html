@@ -1,0 +1,13 @@
+<html>
+<body>
+
+<h1>My Blog</h1>
+
+{% for item in latest_entry_list %}
+<h2>{{ item.title }}</h2>
+
+{{ item.content }}
+{% endfor %}
+
+</body>
+</html>
