@@ -1,35 +1,10 @@
+{% load static %}
 <html>
 <head>
 <title>{% block title %}BicoBlog Personal Blog{% endblock %}</title>
 <link rel="alternate" type="application/rss+xml" title="Last Entries of BicoBlog" href="/latest/feed/" />
-<style type="text/css">
-body {
-  font-family: arial;
-  background-color: green;
-  color: white;
-}
+<link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}" />
 
-h1 {
-  margin-bottom: 10px;
-}
-
-h2 {
-  margin: 0;
-  background-color: #eee;
-  padding: 5px;
-  font-size: 1.2em;
-}
-
-.artigo {
-  border: 1px solid black;
-  background-color: white;
-  color: black;
-}
-
-.conteudo {
-  padding: 10px;
-}
-</style>
 </head>
 <body>
 

@@ -1,11 +1,10 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<img src="{{ MEDIA_URL }}foto.jpg"/>
+<img src="{% static 'images/django_logo.gif' %}"/>
 {% for item in latest_entry_list %}
 	<div class="entry">
 		<a href="{% url blog.views.entry entry_id=item.id %}"><h2>{{ item.title }}</h2></a>
-
 		<div class="content">
 			Entry Date {{ item.pub_date }} <br/>
 			{{ item.content }}

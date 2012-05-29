@@ -8,10 +8,9 @@ from .feeds import LastEntries
 from django.contrib import admin
 admin.autodiscover()
 
-
-
 urlpatterns = patterns('',
     url(r'^$', index, name='index'),
     (r'^latest/feed/$', LatestEntriesFeed()), 
     (r'^entry/(?P<entry_id>\d+)/$', 'bicoblog.blog.views.entry'),
+    (r'^contact/$', 'views.contact'),
 )
