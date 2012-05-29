@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Contact - {{ block.super }}{% endblock %}
+
+{% block h1 %}Contact{% endblock %}
+
+{% block content %}
+{% if show %}<h3>{{ show }}</h3>{% endif %}
+
+Enter your data in the form below:
+
+
+<form method="post">
+{% csrf_token %}
+   <table>
+		{{ form }}
+
+	<tr>
+		<th>&nbsp;</th>
+		<td><input type="submit" value="Send"/></td>
+	</tr>
+  </table>
+</form>
+{% endblock content %}
